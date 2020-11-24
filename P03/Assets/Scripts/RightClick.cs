@@ -7,6 +7,7 @@ public class RightClick : MonoBehaviour
     [SerializeField] Camera cameraController;
     [SerializeField] Transform rayOrigin;
     [SerializeField] float shootDistance = 10f;
+    [SerializeField] GameObject craft;
     RaycastHit objectHit;
     void Update()
     {
@@ -24,6 +25,12 @@ public class RightClick : MonoBehaviour
         //do the raycast
         if (Physics.Raycast(rayOrigin.position, rayDirection, out objectHit, shootDistance))
         {
+            if (objectHit.transform.name == "Crafting Table")
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                craft.SetActive(true);
+            }
             Debug.Log("You Hit the " + objectHit.transform.name);
         }
         else
