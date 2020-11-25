@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     private Inventory inventory;
-    // Update is called once per frame
     private void Awake()
     {
         inventory = new Inventory();
@@ -32,19 +31,10 @@ public class PlayerController : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
-
         controller.Move(move * speed * Time.deltaTime);
-        if (Input.GetButton("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
-        if (Input.GetKey("left shift"))
-        {
-            speed = 20f;
-        }
-        else
-        {
-            speed = 5f;
         }
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);

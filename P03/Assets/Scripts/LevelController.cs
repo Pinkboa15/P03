@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
-   
+    [SerializeField] GameObject menu;
+    [SerializeField] GameObject craft;
+    [SerializeField] AudioClip _BackgroundMusic;
 
-    // Update is called once per frame
+     void Start()
+    {
+        AudioHelper.PlayClip2D(_BackgroundMusic, 0.5f);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ExitGame();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            menu.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            craft.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
     public void ExitGame()

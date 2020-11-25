@@ -24,4 +24,17 @@ public class Item : MonoBehaviour
             case ItemType.Stick: return ItemAssets.Instance.stickSpirte;
         }
     }
+    public bool IsStackable()
+    {
+        switch (itemType)
+        {
+            default:
+            case ItemType.Log:
+            case ItemType.Plank:
+            case ItemType.Stick:
+                return true;
+            case ItemType.Sword:
+                return false;
+        }
+    }
 }
