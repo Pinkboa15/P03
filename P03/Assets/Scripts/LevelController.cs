@@ -6,6 +6,7 @@ public class LevelController : MonoBehaviour
 {
     [SerializeField] GameObject menu;
     [SerializeField] GameObject craft;
+    [SerializeField] GameObject cross;
     [SerializeField] AudioClip _BackgroundMusic;
 
      void Start()
@@ -23,6 +24,7 @@ public class LevelController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             craft.SetActive(false);
+            cross.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }

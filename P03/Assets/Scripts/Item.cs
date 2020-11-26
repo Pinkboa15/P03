@@ -10,12 +10,13 @@ public class Item : MonoBehaviour
         Stick,
         Log,
         Plank,
+        Empty,
     }
-    public ItemType itemType;
+    public ItemType _itemType;
     public int amount;
     public Sprite GetSprite()
     {
-        switch(itemType)
+        switch (_itemType)
         {
             default:
             case ItemType.Sword: return ItemAssets.Instance.swordSpirte;
@@ -26,7 +27,7 @@ public class Item : MonoBehaviour
     }
     public bool IsStackable()
     {
-        switch (itemType)
+        switch (_itemType)
         {
             default:
             case ItemType.Log:
