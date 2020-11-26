@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+<<<<<<< HEAD
 using System.Linq;
+=======
+>>>>>>> main
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -9,6 +12,7 @@ public class Inventory : MonoBehaviour
     public Inventory()
     {
         itemList = new List<Item>();
+<<<<<<< HEAD
         for (int i = 0; i<9; i++)
         {
             AddItem(new Item { _itemType = Item.ItemType.Empty, amount = 1 });
@@ -36,6 +40,15 @@ public class Inventory : MonoBehaviour
         {
             itemList.Add(item);
         }*/
+=======
+        AddItem(new Item { itemType = Item.ItemType.Log, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.Stick, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.Sword, amount = 1 });
+        Debug.Log(itemList.Count);
+    }
+    public void AddItem(Item item)
+    {
+>>>>>>> main
         itemList.Add(item);
     }
     public List<Item> GetItemList()

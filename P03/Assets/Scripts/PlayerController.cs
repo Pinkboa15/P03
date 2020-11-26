@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     private Inventory inventory;
+<<<<<<< HEAD
+=======
+    // Update is called once per frame
+>>>>>>> main
     private void Awake()
     {
         inventory = new Inventory();

@@ -10,6 +10,7 @@ public class Item : MonoBehaviour
         Stick,
         Log,
         Plank,
+<<<<<<< HEAD
         Empty,
     }
     public ItemType _itemType;
@@ -17,6 +18,14 @@ public class Item : MonoBehaviour
     public Sprite GetSprite()
     {
         switch (_itemType)
+=======
+    }
+    public ItemType itemType;
+    public int amount;
+    public Sprite GetSprite()
+    {
+        switch(itemType)
+>>>>>>> main
         {
             default:
             case ItemType.Sword: return ItemAssets.Instance.swordSpirte;
@@ -25,6 +34,7 @@ public class Item : MonoBehaviour
             case ItemType.Stick: return ItemAssets.Instance.stickSpirte;
         }
     }
+<<<<<<< HEAD
     public bool IsStackable()
     {
         switch (_itemType)
@@ -38,4 +48,6 @@ public class Item : MonoBehaviour
                 return false;
         }
     }
+=======
+>>>>>>> main
 }
